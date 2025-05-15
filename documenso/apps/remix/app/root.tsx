@@ -134,7 +134,6 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider
       loaderData={loaderData}
-      // load this from env somewhere instead
       publishableKey={publicEnv.VITE_CLERK_PUBLISHABLE_KEY}
     >
       <html translate="no" lang={lang} data-theme={theme} className={theme ?? ''}>
