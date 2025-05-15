@@ -1,0 +1,47 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# Just plain old shell command. You could use `make` as well.
+cmd = "go build -o ./tmp/main ./bapi"
+# Binary file yields from `cmd`.
+bin = "tmp/main"
+# This log file places in your tmp_dir.
+log = "air.log"
+# Watch these filename extensions.
+include_ext = ["go", "tpl", "tmpl"]
+# Ignore these filename extensions or directories.
+exclude_dir = ["assets", "tmp", "vendor"]
+# Ignore specific regular expressions.
+exclude_regex = ["_test\\.go"]
+# Exclude unchanged files.
+exclude_unchanged = true
+# Follow symlink for directories
+follow_symlink = true
+# Customize binary.
+full_bin = "./tmp/main"
+# This log file places in your tmp_dir.
+log_file = "air.log"
+# Stop running old binary when build errors occur.
+stop_on_error = true
+# Send Interrupt signal before killing process (windows does not support this feature)
+send_interrupt = false
+# Delay after sending Interrupt signal
+kill_delay = 500 # ms
+# Add additional arguments when running binary (bin/full_bin). Will run './tmp/main hello world'.
+# args_bin = ["hello", "world"]
+
+[log]
+# Show log time
+time = true
+
+[color]
+# Customize each part's color. If no color found, use the raw app log.
+main = "magenta"
+watcher = "cyan"
+build = "yellow"
+runner = "green"
+
+[misc]
+# Delete tmp dir on exit
+clean_on_exit = true 
